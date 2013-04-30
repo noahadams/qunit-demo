@@ -7,19 +7,25 @@ test( "hello test", function() {
 module("doubler");
 
 test("doubles", function() {
-    ok(true);
+    strictEqual(double(2), 4, "2 * 2 is 4");
 });
 
-module("dprify");
-
-test("mutiplies by device pixel ratio", function() {
-    ok(true);
+test("doesn't double things that are not numbers", function() {
+    ok(isNaN(double(NaN)), "Doubling NaN is still NaN");
 });
 
 module("tellMeLater");
 
 asyncTest("calls my callback", function() {
-    expect(0);
+    expect(1);
+    tellMeLater(function(message) {
+        strictEqual(message, "It's later", "got called later");
+        start();
+    });
+});
 
-    start();
+module("dprify");
+
+test("mutiplies by device pixel ratio", function() {
+    ok(false, "An intentionally failing test to fix or fix the cause of later");
 });

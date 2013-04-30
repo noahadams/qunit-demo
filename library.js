@@ -7,7 +7,7 @@
         return 2*x;
     };
     window.double = double;
-}())
+}());
 
 
 
@@ -18,7 +18,7 @@
         }, 1000);
     };
     window.tellMeLater = tellMeLater;
-}())
+}());
 
 ;(function(){
     var dpr = window.devicePixelRatio || 1;
@@ -26,5 +26,5 @@
         return x * dpr;
     };
     window.dprify = dprify;
-}())
+}());
 
